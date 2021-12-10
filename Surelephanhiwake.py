@@ -26,7 +26,7 @@ seed = random.choice(ngrams)
 
 new_text = seed
 
-for i in range(50000):
+for i in range(1000):
   for n in ngrams:
     if (n[:3] == new_text[-3:]):
       new_text += n[-1]
@@ -42,31 +42,19 @@ novel = """
 ---
 """
 
-# How about 10 chapters of 5000 words each
 
-for c in range(1,10):
+for c in range(1,12):
 
   # Add a chapter title
   novel += f"## Chapter {c}\n"
-
-  # Add the word "HA" 5000 times
-  for w in range(5000):
-    novel += text
-    if (random.randrange(10) < 2):
-      novel += random.choice(['. ', ' -- ','? ',', and ','. ','! ','.\n\n'])
-
-
   novel += "\n\n\n\n\n\n"
+  novel += new_text
 
 html = markdown.markdown(novel)
 
 # Prepares WeasyPrint / by Zach Whalen
 font_config = FontConfiguration()
 rendered_html = HTML(string=html)
-
-# The following bit of CSS formats the content of the pages, adding
-# page numbers. Here's a good overview of the options:
-# https://www.quackit.com/css/at-rules/css_page_at-rule.cfm 
 
 css = CSS(string='''
 @import url('https://fonts.googleapis.com/css2?family=Festive&display=swap');
@@ -84,11 +72,11 @@ h1 {
   font-size: 50pt;
   text-align:center;
   margin-top: 3in;
-  font-family: 'Festive',cursive;
+  font-family: 'Merriweather',sans-serif;
 }
 h2{
   break-before: recto;
-  font-family: 'Festive',cursive;
+  font-family: 'Merriweather',serif;
 }
 
 h3 {
@@ -138,5 +126,3 @@ h3 {
 
 
 ''', font_config=font_config)
-
-rendered_html.write_pdf('/content/sample.pdf', stylesheets=[css],font_config=font_config)
