@@ -6,7 +6,7 @@ Creating meaning out of confusion, Surelephaniwake, titled after a randomiize li
 
 Sample page:
 
-<img src= "https://user-images.githubusercontent.com/89407955/145529578-05860093-846d-4f6b-9478-a42fc210b075.png" width=50% height=50%>
+<img src= "https://user-images.githubusercontent.com/89407955/145531279-5a5c582d-b35e-45f3-b95f-8964ca3889e0.png" width=50% height=50%>
 
 ## Feats, Struggles, and Reflection
 While [Markovify](https://github.com/jsvine/markovify) has the capacity to make legible language from the Jungle Book, I opted for illegible sentences as an artistic choice. I initially had difficulties exporting my coropa text into html with the accompanying format such as chapters, page numbers, and introductory pages. This was fixed in the second iteration of Surelephanhiwake, now printing properly. For future iterations, I would hope to have images included and further formatting changes.
